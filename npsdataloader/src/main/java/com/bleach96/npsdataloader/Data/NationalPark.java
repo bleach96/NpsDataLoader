@@ -1,5 +1,7 @@
 package com.bleach96.npsdataloader.Data;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
 
 import lombok.Getter;
@@ -16,6 +18,10 @@ public class NationalPark {
     double parkLongitude;
 
     public NationalPark() {
+        this.parkIdentifier = generateUUID();
+    }
 
+    private String generateUUID() {
+        return UUID.randomUUID().toString();
     }
 }
